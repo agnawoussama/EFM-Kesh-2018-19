@@ -34,10 +34,10 @@ namespace EFM_Kesh_2018_19
             this.btnSupp = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
             this.btnSauv = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
+            this.btnNxt = new System.Windows.Forms.Button();
+            this.btnPrvs = new System.Windows.Forms.Button();
+            this.btnFirst = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -108,61 +108,65 @@ namespace EFM_Kesh_2018_19
             this.btnSauv.Text = "Sauvegarder";
             this.btnSauv.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnLast
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.Window;
-            this.button4.BackgroundImage = global::EFM_Kesh_2018_19.Properties.Resources.down_all;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.Window;
-            this.button4.Location = new System.Drawing.Point(746, 315);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(42, 41);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnLast.BackColor = System.Drawing.SystemColors.Window;
+            this.btnLast.BackgroundImage = global::EFM_Kesh_2018_19.Properties.Resources.down_all;
+            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnLast.Location = new System.Drawing.Point(746, 315);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(42, 41);
+            this.btnLast.TabIndex = 4;
+            this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
-            // button3
+            // btnNxt
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Window;
-            this.button3.BackgroundImage = global::EFM_Kesh_2018_19.Properties.Resources.down_one;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
-            this.button3.Location = new System.Drawing.Point(746, 238);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(42, 41);
-            this.button3.TabIndex = 3;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnNxt.BackColor = System.Drawing.SystemColors.Window;
+            this.btnNxt.BackgroundImage = global::EFM_Kesh_2018_19.Properties.Resources.down_one;
+            this.btnNxt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNxt.FlatAppearance.BorderSize = 0;
+            this.btnNxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNxt.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnNxt.Location = new System.Drawing.Point(746, 238);
+            this.btnNxt.Name = "btnNxt";
+            this.btnNxt.Size = new System.Drawing.Size(42, 41);
+            this.btnNxt.TabIndex = 3;
+            this.btnNxt.UseVisualStyleBackColor = false;
+            this.btnNxt.Click += new System.EventHandler(this.btnNxt_Click);
             // 
-            // button2
+            // btnPrvs
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Window;
-            this.button2.BackgroundImage = global::EFM_Kesh_2018_19.Properties.Resources.up_one;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.Window;
-            this.button2.Location = new System.Drawing.Point(746, 167);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 41);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnPrvs.BackColor = System.Drawing.SystemColors.Window;
+            this.btnPrvs.BackgroundImage = global::EFM_Kesh_2018_19.Properties.Resources.up_one;
+            this.btnPrvs.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrvs.FlatAppearance.BorderSize = 0;
+            this.btnPrvs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrvs.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnPrvs.Location = new System.Drawing.Point(746, 167);
+            this.btnPrvs.Name = "btnPrvs";
+            this.btnPrvs.Size = new System.Drawing.Size(42, 41);
+            this.btnPrvs.TabIndex = 2;
+            this.btnPrvs.UseVisualStyleBackColor = false;
+            this.btnPrvs.Click += new System.EventHandler(this.btnPrvs_Click);
             // 
-            // button1
+            // btnFirst
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.button1.BackgroundImage = global::EFM_Kesh_2018_19.Properties.Resources.up_all;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(746, 96);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 41);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnFirst.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.btnFirst.BackgroundImage = global::EFM_Kesh_2018_19.Properties.Resources.up_all;
+            this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFirst.FlatAppearance.BorderSize = 0;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnFirst.Location = new System.Drawing.Point(746, 96);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(42, 41);
+            this.btnFirst.TabIndex = 1;
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // label2
             // 
@@ -235,7 +239,7 @@ namespace EFM_Kesh_2018_19
             this.dtmpck_dtAchat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtmpck_dtAchat.Location = new System.Drawing.Point(615, 22);
             this.dtmpck_dtAchat.Name = "dtmpck_dtAchat";
-            this.dtmpck_dtAchat.Size = new System.Drawing.Size(155, 20);
+            this.dtmpck_dtAchat.Size = new System.Drawing.Size(116, 20);
             this.dtmpck_dtAchat.TabIndex = 18;
             // 
             // txtbx_cnsom
@@ -271,10 +275,10 @@ namespace EFM_Kesh_2018_19
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnSupp);
             this.Controls.Add(this.btnAjt);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLast);
+            this.Controls.Add(this.btnNxt);
+            this.Controls.Add(this.btnPrvs);
+            this.Controls.Add(this.btnFirst);
             this.Controls.Add(this.dgvAutocar);
             this.Name = "UserControl1";
             this.Size = new System.Drawing.Size(800, 422);
@@ -288,10 +292,10 @@ namespace EFM_Kesh_2018_19
         #endregion
 
         private System.Windows.Forms.DataGridView dgvAutocar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.Button btnPrvs;
+        private System.Windows.Forms.Button btnNxt;
+        private System.Windows.Forms.Button btnLast;
         private System.Windows.Forms.Button btnAjt;
         private System.Windows.Forms.Button btnSupp;
         private System.Windows.Forms.Button btnMod;

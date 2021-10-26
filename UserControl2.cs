@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace EFM_Kesh_2018_19
 {
     public partial class UserControl2 : UserControl
     {
-        SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = EfmKesh18; Integrated Security = True");
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
         SqlCommand cmd;
         SqlDataReader dr;
         BindingSource bs;
@@ -60,32 +61,25 @@ namespace EFM_Kesh_2018_19
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /* for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //MessageBox.Show(Convert.ToString( Convert.ToBoolean(dataGridView1.Rows[0].Cells["supp"].Value)));
+            //MessageBox.Show(dataGridView1.Rows[0].Cells[1].Value.ToString());
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
              {
-                 if (Convert.ToBoolean(dataGridView1.Rows[i].Cells[4].Value) == true)
+                 if (Convert.ToBoolean(dataGridView1.Rows[i].Cells["supp"].Value) == true)
                  {
-                     string requette = @"DELETE FROM Ligne WHERE Code_ligne = @code_ligne";
+                     /*string requette = @"DELETE FROM Ligne WHERE Code_ligne = @codeligne";
                      con.Open();
                      cmd = new SqlCommand(requette, con);
-                     cmd.Parameters.AddWithValue("@code_ligne", dataGridView1.Rows[i].Cells[0].Value.ToString());
-                     cmd.ExecuteNonQuery();
-                     MessageBox.Show("Syppression Reussi!");
+                     cmd.Parameters.AddWithValue("@codeligne", dataGridView1.Rows[i].Cells[1].Value);
+                     cmd.ExecuteNonQuery();*/
 
+                    dataGridView1.Rows.RemoveAt(i);
+                    MessageBox.Show("Syppression Reussi!");
 
                  }
-
-                 if ((bool)dataGridView1.Rows[i].Cells[4].FormattedValue)
-                 {
-                     dataGridView1.Rows.RemoveAt(i);
-                 }
-
              }
              con.Close();
-             afficher();*/
-
-
-
-
+             //afficher();
 
             //try
             //{

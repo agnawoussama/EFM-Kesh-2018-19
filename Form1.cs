@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace EFM_Kesh_2018_19
 {
     public partial class Form1 : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = EfmKesh18; Integrated Security = True");
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
         SqlCommand cmd;
         SqlDataReader dr;
         BindingSource bs;

@@ -8,15 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace EFM_Kesh_2018_19
 {
     public partial class UserControl1 : UserControl
     {
-        SqlConnection con = new SqlConnection(@"Data Source =.; Initial Catalog = EfmKesh18; Integrated Security = True");
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
         SqlCommand cmd;
         SqlDataReader dr;
-        BindingSource bs;
+        BindingSource bs = new BindingSource();
         public UserControl1()
         {
             InitializeComponent();
@@ -79,8 +80,7 @@ namespace EFM_Kesh_2018_19
                 string requette = @"SELECT * FROM Autocar";
                 con.Open();
                 cmd = new SqlCommand(requette, con);
-                dr = cmd.ExecuteReader();
-                bs = new BindingSource();
+                dr = cmd.ExecuteReader();               
                 bs.DataSource = dr;
                 dgvAutocar.DataSource = bs;
             }
@@ -99,16 +99,27 @@ namespace EFM_Kesh_2018_19
         {
             try
             {
-                string requette = @"INSERT INTO Autocar VALUES (@Code_car, @capacite, @date_achat, @consommation, @nom_marque)";
                 con.Open();
-                cmd = new SqlCommand(requette, con);
+                cmd = new SqlCommand();
+                string requette = @"INSERT INTO Autocar VALUES (@Code_car, @capacite, @date_achat, @consommation, @nom_marque)";
+
+                /*if (txtbx_codeCar.Text != "") { cmd.CommandText = @"INSERT INTO Autocar VALUES (@Code_car)"; cmd.ExecuteNonQuery(); }
+                if (txtbx_codeCar.Text != "") { cmd.CommandText = @"INSERT INTO Autocar VALUES (@Code_car)"; cmd.ExecuteNonQuery(); }
+                if (txtbx_codeCar.Text != "") { cmd.CommandText = @"INSERT INTO Autocar VALUES (@Code_car)"; cmd.ExecuteNonQuery(); }
+                if (txtbx_codeCar.Text != "") { cmd.CommandText = @"INSERT INTO Autocar VALUES (@Code_car)"; cmd.ExecuteNonQuery(); }
+                if (txtbx_codeCar.Text != "") { cmd.CommandText = @"INSERT INTO Autocar VALUES (@Code_car)"; cmd.ExecuteNonQuery(); }*/
+
+
+
+
+                cmd.CommandText = requette;
+                cmd.Connection = con;
                 cmd.Parameters.AddWithValue("@Code_car", txtbx_codeCar.Text);
                 cmd.Parameters.AddWithValue("@capacite", txtbx_Cpcit.Text);
                 cmd.Parameters.AddWithValue("@date_achat", dtmpck_dtAchat.Text);
                 cmd.Parameters.AddWithValue("@consommation", txtbx_cnsom.Text);
                 cmd.Parameters.AddWithValue("@nom_marque", cmbx_Mrque.SelectedItem.ToString());
                 cmd.ExecuteNonQuery();
-                bs = new BindingSource();
                 bs.DataSource = dr;
                 dgvAutocar.DataSource = bs;
             }
@@ -170,6 +181,26 @@ namespace EFM_Kesh_2018_19
                 con.Close();
                 afficher();
             }
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            bs.MoveFirst();
+        }
+
+        private void btnPrvs_Click(object sender, EventArgs e)
+        {
+            bs.MovePrevious();
+        }
+
+        private void btnNxt_Click(object sender, EventArgs e)
+        {
+            bs.MoveNext();
+        }
+
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            bs.MoveLast();
         }
     }
 }
